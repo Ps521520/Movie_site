@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>movie page</title>
+    <style>
+        ul{
+            list-style-type: none;
+            background: red;
+            padding:10px;
+        }
+        li{
+            background: black;
+            margin:10px;
+            padding:15px;
+            text-align: center;
+            font-size: 25px;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+        }
+        div.menu{
+            width:23%;
+            position: absolute;
+            padding: 10px;
+            top: 60px;
+            left: 0px;
+            border: 1px solid red;
+        }
+        div.frame{
+            overflow: auto;
+            width:72%;
+            height:600px;
+            position: absolute;
+            padding: 10px;
+            top: 60px;
+            left: 350px;
+            border: 1px solid red;
+        }
+        div.moviebox{
+            /*background-image: url("{% static 'movie_img.jpg' %}");*/
+            display: inline-block;
+            width:24%;
+            height:40%;
+            border: 1px solid red;
+        }
+        img{
+            border-radius: 50%;
+            width:100px;
+        }
+    </style>
+</head>
+<body style="background-color: black;color:red; font-family: Bitstream Vera Sans Mono, Monaco, Courier New, Courier, monospace;">
+<center><h1>ALL MOVIES LIST WHICH YOU ARE SEARCHING FOR</h1></center>
+
+<div class="frame">
+    {% for movie in movies %}
+    <div class="moviebox">
+        <center>
+            <h3>{{movie.MOVIES_NAME}}</h3>
+            <p>Type={{movie.MOVIES_TYPE}}</></p>
+            <p>Language={{movie.MOVIES_LANGUAGE}}</p>
+            <p>Region={{movie.MOVIES_REGION}}</p>
+            <p><a href="{{movie.LINKS}}">CLICK HERE TO WATCH</a></p>
+        </center>
+        rating({{movie.RATINGS}})
+    </div>
+    {% endfor %}
+</div>
+<div class="menu">
+
+    <center>
+        <img src="{% static 'img_avatar.png' %}" >
+        <h4>WELCOME ! {{user.name.upper}}</h4>
+        <h1>Menu</h1>
+    </center>
+    <ul>
+        <li> <a href="profile">Profile</a> </li>
+        <li> <a href="history">History</a> </li>
+        <li> <a href="recently_viewed">Recently Viewed</a> </li>
+        <li> <a href="logout">Logout</a> </li>
+    </ul>
+</div>
+
+
+
+</body>
+</html>

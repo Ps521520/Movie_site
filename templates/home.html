@@ -1,0 +1,168 @@
+
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BSARRKNET Hompage</title>
+    <style>
+        body{
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+        }
+        div.logo{
+            position: absolute;
+            top:0px;
+            left:0px;
+            width:150px;
+            color: red;
+        }
+        div.reg_lgn{
+            position: absolute;
+            top:0px;
+            right:0px;
+            width:180px;
+            color: red;
+        }
+        div.social_media{
+           position: absolute;
+            top:50px;
+            right: 5px;
+        }
+        div.bckimg{
+            position: absolute;
+            top: 105px;
+            left: 0px;
+            border: 1px solid red;
+        }
+        div.custom-regional{
+            color:red;
+            width:250px;
+            position: absolute;
+            top: 410px;
+            left: 0px;
+            cursor: pointer;
+            border: 1px solid red;
+        }
+        select.movie_choice{
+            color:red;
+            width:120px;
+            height:30px;
+            background-color: black;
+             cursor: pointer;
+        }
+        div.custom-Movie-Type{
+            color:red;
+            width:150px;
+            position: absolute;
+            top: 410px;
+            right: 0px;
+             cursor: pointer;
+            border: 1px solid red;
+
+        }
+        select.movie_Type{
+            color:red;
+            width:120px;
+            height:30px;
+            background-color: black;
+             cursor: pointer;
+        }
+        div.description{
+            color:red;
+            width:955px;
+            position: absolute;
+            top: 410px;
+            right: 155px;
+            border: 1px solid red;
+
+
+        }
+
+        button{
+            background-color: black;
+            border:none;
+            color: red;
+            font-size: 20px;
+             cursor: pointer;
+        }
+        input{
+            background-color: black;
+            color: red;
+            border:none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<div class="bckimg"> <img src="{% static "back_image.jpg" %}" height="300px" width="100%" > </div>
+<form action="login_register" method="post">
+    {% csrf_token %}
+    <div class="reg_lgn">
+    <p> <button type="submit" name="login"> Login </button> <button type="submit" name="register" > Register  </button> </p>
+    </div>
+</form>
+<div class="logo">
+    <h1>BSARRKNET</h1>
+</div>
+    <center><h2 style="color:red">ENTERTAINMENT SEASON HAS BEEN STARTED</h2></center>
+    <p><h3 style="color:red" >******** START WATCHING YOUR FAVOURITE MOVIES,SHOWS,WEBSERIES,SONGS AND MANYMORE ONLY ON BSARRKNET ********</h3></p>
+<form action="movie_selection" method="post">
+    {% csrf_token %}
+<div class="custom-regional"">
+    <h2>Regional Movie Choices</h2>
+  <select class="movie_choice" name="regional">
+    <option value="0">Select Type:</option>
+    <option value="Hindi">Hindi</option>
+    <option value="English">English</option>
+    <option value="Bengali">Bengali</option>
+    <option value="Telgu">Telgu</option>
+      <option value="Tamil">Tamil</option>
+      <option value="South">South</option>
+    <option value="Bhojpuri">Bhojpuri</option>
+    <option value="Punjabi">Punjabi</option>
+    <option value="Bollywood">Bollywood</option>
+    <option value="Hollywood">Hollywood</option>
+    <option value="Tollywood">Tollywood</option>
+  </select>
+    <p><input type="submit" name="submit_regional"></p>
+</form>
+<form action="movie_selection" method="post">
+    {% csrf_token %}
+</div>
+    <div class="custom-Movie-Type">
+    <h2>Movies Types</h2>
+    <select class="movie_Type" name="movie_type">
+    <option value="0">Select Type:</option>
+    <option value="Comedy">Comedy</option>
+    <option value="Action">Action</option>
+    <option value="Romantic">Romantic</option>
+    <option value="Thriller">Thriller</option>
+    <option value="Horror">Horror</option>
+    <option value="Drama">Drama</option>
+  </select>
+        <p><input type="submit" name="submit_movie_type"></p>
+</div>
+</form>
+<div class="description">
+    <p>
+        Movies are made to entertain audiences, and movie websites are much the same. In order to get visitors’ attention and encourage them to see the movie, a website needs to give them what they are looking for and provide some entertainment at the same time. Today’s movie websites make it easy to take a couple minutes and watch a few trailers before deciding which movie to see.
+    </p>
+    <p>In this blighted age we live in, there are sooooo many films that are basically nothing but gimmicks. The Hobbit. The Star Wars prequel trilogy . . . The list is virtually endless. The thing is, these flicks all try very hard to convince you, the viewer, that they’re not just quick, gimmick-y cash-ins — hell, they spend millions, even hundreds of millions, trying to dupe you into thinking that they’re something more than that. Something necessary.</p>
+
+</div>
+    <div class="social_media">
+        <h3>
+        <a href="https://www.facebook.com/" class="facebook"><img src="{% static 'facebook-new.jpg' %}" height="30" width="30"> </a>
+        <a href="https://www.instagram.com/?hl=en" class="instagram"><img src="{% static 'instagram.jpg' %}" height="30" width="30"> </a>
+        <a href="https://twitter.com/login" class="twitter"><img src="{% static 'twitter.jpg' %}" height="30" width="30"> </a>
+        <a href="https://www.linkedin.com/login" class="linkedin"><img src="{% static 'linkedin.jpg' %}" height="30" width="30"> </a>
+        </h3>
+    </div>
+
+</body>
+</html>

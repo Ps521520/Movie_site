@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BSARRKNET Login Page</title>
+    <style>
+        body{
+            background-color: black;
+            color: red;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+        }
+
+    </style>
+
+</head>
+<body>
+<div style="position:absolute; top:50px; border: 3px solid red; height:450px; width:600px; left:450px">
+<form action="data_page" method="post" >
+    {% csrf_token %}
+<center>
+    <h1>PLEASE DO LOGIN TO GET INSIDE</h1>
+    <label>Enter Id:</label>
+    <p><input type="email" name="email" style="width:300px; background-color: red; height: 30px;cursor:pointer" required></p>
+    <label>Password: </label>
+    <p><input type="password" name="password" style="width:300px; background-color: red; height: 30px;cursor:pointer" required></p>
+    <p><input type="submit" name="login" value="Login"  style="width:100px; background-color: red; height: 30px;cursor:pointer" required></p>
+</center>
+</form>
+
+<form action="data_page" method="post">
+    {% csrf_token %}
+<center>
+    <p>YET NOT REGISTERED ? REGISTER HERE</p>
+    <p><input type="submit" name="register" value="REGISTER" style="width:100px; background-color: red; height: 30px;cursor:pointer" required></p>
+</center>
+</form>
+</div>
+
+</body>
+</html>

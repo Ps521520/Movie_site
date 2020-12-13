@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <style>
+        body{
+            background-color: black;
+            color: red;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+        }
+        ul{
+            list-style-type: none;
+            background: red;
+            padding:10px;
+        }
+        li{
+            background: black;
+            margin:10px;
+            padding:15px;
+            text-align: center;
+            font-size: 25px;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+        }
+        div.menu{
+            width:23%;
+            position: absolute;
+            padding: 10px;
+            top: 60px;
+            left: 0px;
+            border: 1px solid red;
+        }
+        img{
+            border-radius: 50%;
+            width:100px;
+        }
+    </style>
+</head>
+<body>
+<div class="menu">
+
+    <center>
+        <img src="{% static 'img_avatar.png' %}" >
+        <h4>WELCOME ! {{user.name.upper}}</h4>
+        <h1>Menu</h1>
+    </center>
+    <ul>
+
+        <li> <a href="profile" >Profile</a> </li>
+        <li> <a href="history">History</a> </li>
+        <li> <a href="recently_viewed">Recently Viewed</a> </li>
+        <li> <a href="logout">Logout</a> </li>
+
+    </ul>
+</div>
+
+
+<style>
+    tr{
+        height:70px;
+
+    }
+    td{
+        width:300px;
+        font-size: 20px;
+        border:2px solid red;
+    }
+</style>
+<center><h1>USER INFO TABLE</h1></center>
+<div class="profile" style="top:50px;position: absolute;width:60%;left:250px;padding: 10px;" >
+
+    <center>
+        <table>
+            <tr>
+                <td>Name</td><td>{{user.name}}</td>
+            </tr>
+            <tr>
+                <td>Phone</td><td>{{user.number}}</td>
+            </tr>
+            <tr>
+                <td>State</td><td>{{user.state}}</td>
+            </tr>
+            <tr>
+                <td>Country</td><td>{{user.country}}</td>
+            </tr>
+            <tr>
+                <td>Movie Choice</td><td>{{user.movie_choice}}</td>
+            </tr>
+            <tr>
+                <td>Email</td><td>{{user.email}}</td>
+            </tr>
+            <tr>
+                <td>Password</td><td>{{user.password}}</td>
+            </tr>
+        </table>
+
+    </center>
+</div>
+</body>
+</html>
